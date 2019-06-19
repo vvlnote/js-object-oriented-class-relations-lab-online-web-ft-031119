@@ -1,9 +1,14 @@
 let driverID = 0;
+<<<<<<< HEAD
 let store = {drivers: [], passengers: [], trips: []};
+=======
+let store = [];
+>>>>>>> 92b5d0ad5f55936e9662756cf068797e82f0a322
 class Driver {
   constructor(name) {
     this.id = ++driverID;
     this.name = name;
+<<<<<<< HEAD
     store.drivers.push(this);
   }
 
@@ -18,6 +23,17 @@ class Driver {
       passengers.push(trip.passenger());
     })
     return passengers;
+=======
+    store << this;
+  }
+
+  trips() {
+
+  }
+
+  passengers() {
+
+>>>>>>> 92b5d0ad5f55936e9662756cf068797e82f0a322
   }
 }
 
@@ -26,6 +42,7 @@ class Passenger {
   constructor (name) {
     this.id = ++passengerID;
     this.name = name;
+<<<<<<< HEAD
     store.passengers.push(this);
   }
 
@@ -40,6 +57,16 @@ class Passenger {
       drivers.push(trip.driver());
     })
     return drivers;
+=======
+  }
+
+  trips() {
+
+  }
+
+  drivers() {
+
+>>>>>>> 92b5d0ad5f55936e9662756cf068797e82f0a322
   }
 }
 
@@ -49,6 +76,7 @@ class Trip {
     this.id = ++tripID;
     this.driverId = driver.id;
     this.passengerId = passenger.id;
+<<<<<<< HEAD
     store.trips.push(this);
 
   }
@@ -65,5 +93,15 @@ class Trip {
     return store.passengers.find(function(passenger) {
       return (passenger.id == pId);
     })
+=======
+  }
+
+  driver() {
+
+  }
+
+  passenger() {
+
+>>>>>>> 92b5d0ad5f55936e9662756cf068797e82f0a322
   }
 }
