@@ -15,8 +15,7 @@ class Driver {
     let trips = this.trips();
     let passengers = [];
     trips.forEach(function(trip) {
-      passengers.push(store.passengers.find(function(passenger) {
-        return passenger.id == trip.passengerId;}));
+      passengers.push(trip.passenger());
     })
     return passengers;
   }
@@ -38,9 +37,7 @@ class Passenger {
     let trips = this.trips();
     let drivers = [];
     trips.forEach(function(trip) {
-      drivers.push(store.drivers.find(function(driver) {
-        return driver.id == trip.driverId;
-      }))
+      drivers.push(trip.driver());
     })
     return drivers;
   }
@@ -65,9 +62,7 @@ class Trip {
 
   passenger() {
     let pId = this.passengerId;
-    console.log(pId);
     return store.passengers.find(function(passenger) {
-      console.log(`passenger.id = ${passenger.id}, pId = ${pId}`);
       return (passenger.id == pId);
     })
   }
